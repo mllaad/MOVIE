@@ -20,14 +20,14 @@ function App() {
   const dispatch = useDispatch();
   dispatch(getGenreList());
   const { pathname } = useLocation();
-  // const [reRender, setRerender] = useState(0);
+  const [reRender, setRerender] = useState(0);
 
   axios
     .get(
       "https://ipgeolocation.abstractapi.com/v1/?api_key=2812dc4a710c4ec8bf74fb65a8fe0c25"
     )
     .then((res) => {
-      // setRerender((i) => i + 1);
+      setRerender((i) => i + 1);
       if (res.data.country_code === "IR")
         return alert(`لطفا با فیلتر شکن وارد شوید
       حتما لینک وبسایت را دوباره باز کنید`);
