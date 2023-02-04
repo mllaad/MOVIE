@@ -37,6 +37,10 @@ const HeroSlide = () => {
   }
   const results = JSON.parse(sessionStorage.getItem("results"));
 
+  if (status === "rejected") {
+    alert(`لطفا با فیلتر شکن وارد شوید
+      حتما لینک وبسایت را دوباره باز کنید`);
+  }
   if (!results || !results.length)
     return (
       <HeroSlideEl>
